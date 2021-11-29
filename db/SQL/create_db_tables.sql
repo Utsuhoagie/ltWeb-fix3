@@ -24,16 +24,15 @@ CREATE TABLE `Contact` (
    PRIMARY KEY(`id`)
 );
 
-CREATE TABLE `User` (
-    `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-    `name` varchar(30) NOT NULL,
-    `password` varchar(32) NOT NULL,
-    `email` varchar(255) NOT NULL,
-    `phone` varchar(15),
-    `birthday` DATE,
-    `img_path` varchar(255) NOT NULL DEFAULT "img/user/default_avatar.png",   -- TODO: move folder to root instead
-    PRIMARY KEY (`id`)
-);
+CREATE TABLE `user` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `img_path` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 CREATE TABLE `Car` (
@@ -138,11 +137,11 @@ CREATE TABLE `tblsubcategory` (
 CREATE TABLE `tblcomments` (
   `id` int(11) NOT NULL,
   `postId` int(11) DEFAULT NULL,
-  `name` varchar(120) DEFAULT NULL,
-  `email` varchar(150) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `comment` mediumtext DEFAULT NULL,
   `postingDate` timestamp NULL DEFAULT current_timestamp(),
-  `status` int(1) DEFAULT NULL
+  `img_path` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
