@@ -43,7 +43,7 @@
                                         <h5>Hi, Admin</h5>
                                     </li>
                               
-                                    <li><a href="change-password.php"><i class="ti-settings m-r-5"></i> Change Password</a></li>
+                                    <li><a href="../../landingPage.php"><i class="ti-settings m-r-5"></i>Home</a></li>
                            
                                     <li><a href="logout.php"><i class="ti-power-off m-r-5"></i> Logout</a></li>
                                 </ul>
