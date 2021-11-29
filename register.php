@@ -25,16 +25,22 @@
 	<link rel = "icon" href = "img/logo.png" type = "image/x-icon">
 
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
   	<!-- Custom styles -->
-  	<link rel="stylesheet" href="css/base.css">
+  	<link rel="stylesheet" href="css/both.css">
 	<link rel="stylesheet" href="css/register.css">
+	<link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
+	<!-- Navigation -->
+	<?php
+		include "includes/navbar.php"
+	?>
 	<div class="container">
-		<div class="row">
+		<div class="row" id="row2">
 			<div class="col-md-4 col-md-offset-4 well">
 				<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">
 					<fieldset>
@@ -95,7 +101,7 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" id="row1">
 			<div class="col-md-4 col-md-offset-4 text-center">	
 				<span id="check">Already Registered? </span><a href="login.php">Login Here</a>
 			</div>
