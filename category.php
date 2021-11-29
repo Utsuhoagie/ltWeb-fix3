@@ -24,7 +24,7 @@
   <title>Carworld - Category</title>
 
   <!-- Logo -->
-  <link rel = "icon" href = "img/favicon.png" type = "image/x-icon">
+  <link rel = "icon" href = "img/Hanh/favicon.png" type = "image/x-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -77,55 +77,41 @@
       while ($row=mysqli_fetch_array($query)) {
 
 
-?>
-<h1><?php echo htmlentities($row['category']);?> News</h1>
-        <div class="card mb-4">
-      <img class="card-img-top" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
-          <div class="card-body">
-            <h2 class="card-title"><?php echo htmlentities($row['posttitle']);?></h2>
-          
-            <a href="news-details.php?nid=<?php echo htmlentities($row['pid'])?>" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on <?php echo htmlentities($row['postingdate']);?>
-          
-          </div>
-        </div>
-<?php } ?>
+    ?>
+      <h1><?php echo htmlentities($row['category']);?> News</h1>
+              <div class="card mb-4">
+            <img class="card-img-top" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
+                <div class="card-body">
+                  <h2 class="card-title"><?php echo htmlentities($row['posttitle']);?></h2>
+                
+                  <a href="news-details.php?nid=<?php echo htmlentities($row['pid'])?>" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                  Posted on <?php echo htmlentities($row['postingdate']);?>
+                
+                </div>
+              </div>
+      <?php } ?>
 
-  <ul class="pagination justify-content-center mb-4">
-      <li class="page-item"><a href="?pageno=1"  class="page-link">First</a></li>
-      <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?> page-item">
-          <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="page-link">Prev</a>
-      </li>
-      <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?> page-item">
-          <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?> " class="page-link">Next</a>
-      </li>
-      <li class="page-item"><a href="?pageno=<?php echo $total_pages; ?>" class="page-link">Last</a></li>
-  </ul>
-<?php } ?>
-      
-
-    
-
-        <!-- Pagination -->
-
-
-
-
-      </div>
-
+      <ul class="pagination justify-content-center mb-4">
+          <li class="page-item"><a href="?pageno=1"  class="page-link">First</a></li>
+          <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?> page-item">
+              <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="page-link">Prev</a>
+          </li>
+          <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?> page-item">
+              <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?> " class="page-link">Next</a>
+          </li>
+          <li class="page-item"><a href="?pageno=<?php echo $total_pages; ?>" class="page-link">Last</a></li>
+      </ul>
+    <?php } ?>
+    <!-- Pagination -->
+    </div>
       <!-- Sidebar Widgets Column -->
     <?php include('includes/sidebar.php');?>
     </div>
     <!-- /.row -->
-
   </div>
   <!-- /.container -->
-
-  <!-- Footer -->
-    <?php include('includes/footer.php');?>
-
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
