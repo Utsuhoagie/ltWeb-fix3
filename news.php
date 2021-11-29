@@ -33,7 +33,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <?php //include('includes/header.php');
+  <?php
     include "includes/navbar.php"
   ?>
   <!-- Page Content -->
