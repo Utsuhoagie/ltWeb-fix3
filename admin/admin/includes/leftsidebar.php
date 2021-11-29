@@ -65,8 +65,7 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Comments </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="unapprove-comment.php">Waiting for Approval </a></li>
-                                    <li><a href="manage-comments.php">Approved Comments</a></li>
+                                    <li><a href="unapprove-comment.php">Comments Manage</a></li>
                                 </ul>
                             </li>
 
@@ -75,10 +74,7 @@
                     <!-- Sidebar -->
                     <div class="clearfix"></div>
 
-                    <div class="help-box">
-                        <h5 class="text-muted m-t-0">For Help ?</h5>
-                        <p class=""><span class="text-custom">Email:</span> <br /> phpgurukulofficial@gmail.com</p>
-                    </div>
+                    
 
                 </div>
                 <!-- Sidebar -left -->
