@@ -28,7 +28,7 @@
         $phone = mysqli_real_escape_string($conn, $_POST["phone"]);
         $birthday_string = date('Y-m-d', strtotime($_POST["birthday"])); 
         $birthday = mysqli_real_escape_string($conn, $birthday_string);
-        $password = mysqli_real_escape_string($conn, md5($_POST["password"]));
+        $password = mysqli_real_escape_string($conn, $_POST["password"]);
 
         if(!preg_match("/^[a-zA-Z ]+$/",$user_name) || strlen($user_name) < 4) {
             $name_error = "Name must be minimum of 4 characters, contain only alphabets and space";
