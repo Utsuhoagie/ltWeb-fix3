@@ -45,7 +45,8 @@
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="css/profile.css" rel="stylesheet">
+    <link href="css/info.css" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
 </head>
 
 <body class="animsition">
@@ -286,25 +287,25 @@
 
                             <div class="col-md-2">
                                 <div class="copyright">
-                                    <p>Privacy Policy</p>
+                                <a href="aboutUs.php"><p>About us</p></a>
                                 </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="copyright">
-                                    <p>Term & Condition </p>
+                                    <a href="news.php"><p>News</p></a>
                                 </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="copyright">
-                                    <p>Career</p>
+                                    <a href="carList.php"><p>Product</p></a>
                                 </div>
                             </div>
 
                             <div class="col-md-2">  
                                 <div class="copyright">
-                                    <p>News</p>
+                                <a href="landingPage.php"><p>Home</p></a>
                                 </div>
                             </div>
                         </div>
