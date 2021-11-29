@@ -24,19 +24,20 @@
   <title>Carworld - Search Page</title>
 
   <!-- Logo -->
-  <link rel = "icon" href = "img/favicon.png" type = "image/x-icon">
+  <link rel = "icon" href = "img/Hanh/favicon.png" type = "image/x-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles -->
   <link href="css/new.css" rel="stylesheet">
+  <link href="css/navbar.css" rel="stylesheet">
 </head>
 
   <body>
 
-    <!-- Navigation -->
-   <?php include('includes/header.php');?>
+    <!-- Navbar -->
+    <?php include "includes/navbar.php" ?>
 
     <!-- Page Content -->
     <div class="container">
