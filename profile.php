@@ -52,13 +52,6 @@
     <div class="page-wrapper">
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
-            <div class="sidebar-header">
-                <a href="/" class="brand-logo">
-                    <img src="img/logo.png">
-                    <div class="brand-logo-name">Carworld</div>
-                </a>
-            </div>
-
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
@@ -97,76 +90,92 @@
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
-            <header class="header-desktop">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="header-wrap">
-                            <div class="header-button">
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-                                        <?php 
-                                            $sql = "SELECT * FROM user WHERE id='{$_SESSION["id"]}'";
-                                            $result = mysqli_query($conn, $sql);
-                                            if (mysqli_num_rows($result) > 0) {
-                                                while ($row = mysqli_fetch_assoc($result)) {
-                                        ?>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                <a class="navbar-brand" href="landingPage.php">
+                    Carworld
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="carList.php">Product list</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.php">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutUs.php">About us</a>
+                        </li>
+                        <li class="nav-item">  
+                            <div class="account-wrap">
+                            <div class="account-item clearfix js-item-menu">
+                                <?php 
+                                    $sql = "SELECT * FROM user WHERE id='{$_SESSION["id"]}'";
+                                    $result = mysqli_query($conn, $sql);
+                                    if (mysqli_num_rows($result) > 0) {
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
 
+                                <div class="image">
+                                    <?php if (empty($row['img_path'])) : ?>
+                                        <img src="img/user/default_avatar.png" alt="<?=$row['name'];?>"/>
+                                    <?php else : ?>
+                                        <img src="<?php echo $row['img_path']?>" alt="<?=$row['name'];?>"/>
+                                    <?php endif; ?>    
+                                </div>    
+
+                                <div class="content">
+                                    <a class="js-acc-btn" href="#"><?=$row['name'];?></a>
+                                </div>
+
+                                <div class="account-dropdown js-dropdown">
+                                    <div class="info clearfix">
                                         <div class="image">
-                                            <?php if (empty($row['img_path'])) : ?>
-                                                <img src="img/user/default_avatar.png" alt="<?=$row['name'];?>"/>
-                                            <?php else : ?>
-                                                <img src="<?php echo $row['img_path'] ?>" alt="avatar">
-                                            <?php endif; ?>    
-                                        </div>    
-
+                                            <a href="profile.php">
+                                                <?php if (empty($row['img_path'])) : ?>
+                                                    <img src="img/user/default_avatar.png" alt="<?=$row['name'];?>"/>
+                                                <?php else : ?>
+                                                    <img src="<?php echo $row['img_path']?>" alt="<?=$row['name'];?>"/>
+                                                <?php endif; ?>
+                                            </a>
+                                        </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#"><?=$row['name'];?></a>
+                                            <h5 class="name">
+                                                <a href="profile.php"><?=$row['name'];?></a>
+                                            </h5>
+                                            <span class="email"><?=$row['email'];?></span>
                                         </div>
-
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <?php if (empty($row['img_path'])) : ?>
-                                                            <img src="img/user/default_avatar.png" alt="<?=$row['name'];?>"/>
-                                                        <?php else : ?>
-                                                            <img src="<?php echo $row['img_path'] ?>" alt="avatar">
-                                                        <?php endif; ?>
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#"><?=$row['name'];?></a>
-                                                    </h5>
-                                                    <span class="email"><?=$row['email'];?></span>
-                                                </div>
-                                            </div>
-                                        <?php
-                                            }
-                                        }
-                                        ?>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="fas fa-box"></i>Order</a>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__footer">
-                                                <a href="logout.php">
-                                                <i class="zmdi zmdi-power"></i>Logout</a>
-                                            </div>
+                                    </div>
+                                <?php
+                                    }
+                                }
+                                ?>
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-account"></i>Account</a>
                                         </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="fas fa-box"></i>Order</a>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__footer">
+                                        <a href="logout.php">
+                                        <i class="zmdi zmdi-power"></i>Logout</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            </div>
+                        </li>
+                    </ul>
                     </div>
                 </div>
-            </header>
+            </nav>
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
