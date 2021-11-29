@@ -6,7 +6,20 @@ body {
 }
 
 .row {
-    margin-top: 50px;
+    margin-top: 65px;
+}
+
+#row1 {
+    margin-top: 26px;
+}
+
+#row2 {
+  margin-top: 26px;
+}
+
+#in {
+  margin-left: 68%;
+  margin-top: 10px;
 }
 
 .join-page-circle-1 {
