@@ -1,6 +1,6 @@
 <?php
 function base_url($uri = ''){
-    return 'http://localhost/lapTrinhWeb/'.$uri;
+    return 'http://localhost/FN/admin/'.$uri;
 }
  
 // Hàm redirect
