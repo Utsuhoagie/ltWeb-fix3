@@ -124,14 +124,14 @@ if (is_submit('edit_car')) {
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="page-title-box">
-                                <h4 class="page-title">Manage Sub-admins</h4>
+                                <h4 class="page-title">Manage Car</h4>
                                 <ol class="breadcrumb p-0 m-0">
 
                                     <li>
-                                        <a href="#">Sub-admins </a>
+                                        <a href="#">Car </a>
                                     </li>
                                     <li class="active">
-                                        Manage Sub-admins
+                                        Manage Car
                                     </li>
                                 </ol>
                                 <div class="clearfix"></div>

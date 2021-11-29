@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
     $warranty = input_post('warranty');
     $description = input_post('description');
 
-    $target_dir = "carImg/";
+    $target_dir = "../../img/car/";
     $carImageName1 = time() . '-' . $_FILES["carImage1add"]["name"];
     $target_file1 = $target_dir . basename($carImageName1);
     $photo_tmp_name1 = $_FILES["carImage1add"]["tmp_name"];
@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
 
 <head>
 
-    <title>Newsportal | Add Subadmin</title>
+    <title>Newsportal | Add Car</title>
 
     <!-- App css -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -126,16 +126,16 @@ if (isset($_POST['submit'])) {
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="page-title-box">
-                                <h4 class="page-title">Add Subadmin</h4>
+                                <h4 class="page-title">Add Car</h4>
                                 <ol class="breadcrumb p-0 m-0">
                                     <li>
                                         <a href="#">Admin</a>
                                     </li>
                                     <li>
-                                        <a href="#">Subadmin </a>
+                                        <a href="#">Car </a>
                                     </li>
                                     <li class="active">
-                                        Add Subadmin
+                                        Add Car
                                     </li>
                                 </ol>
                                 <div class="clearfix"></div>
@@ -148,7 +148,7 @@ if (isset($_POST['submit'])) {
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="card-box">
-                                <h4 class="m-t-0 header-title"><b>Add Subadmin </b></h4>
+                                <h4 class="m-t-0 header-title"><b>Add Car </b></h4>
                                 <hr />
                                 <div class="row">
                                     <div class="col-md-6">
