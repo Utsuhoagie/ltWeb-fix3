@@ -13,7 +13,7 @@ if (is_submit('delete_car')) {
     $id = input_post('id');
     $sql = "DELETE FROM car where id = '$id'";
     db_execute($sql);
-    redirect(base_url('admin/manage-subadmins.php'));
+    redirect(base_url('admin/manage-car.php'));
 }
 if (is_submit('edit_car')) {
     $id = input_post('id');
@@ -68,7 +68,7 @@ if (is_submit('edit_car')) {
         description='$description', car_img1='$carImageName1', car_img2='$carImageName2', car_img3='$carImageName3' WHERE id='$id'";
     }
     db_execute($sql);
-    redirect(base_url('admin/manage-subadmins.php'));
+    redirect(base_url('admin/manage-car.php'));
 }
 
 ?>
@@ -172,7 +172,7 @@ if (is_submit('edit_car')) {
                                                                     ?>
                                                                         <img class="carImg" src="../../img/car/default.png" alt="car">
                                                                     <?php else : ?>
-                                                                        <img class="carImg" src="<?php echo "../../" . $item['car_img1'] ?>" alt="car">
+                                                                        <img class="carImg" src="<?php echo "../../img/car/" . $item['car_img1'] ?>" alt="car">
                                                                     <?php endif; ?>
                                                                 </div>
                                                             </div>
@@ -295,7 +295,7 @@ if (is_submit('edit_car')) {
                                                                                                             ?>
                                                                                                                 <img class="carImg" src="../../img/car/default.png" onClick="triggerClick1<?php echo $item['id']; ?>()" id="carDisplay1<?php echo $item['id']; ?>">
                                                                                                             <?php else : ?>
-                                                                                                                <img class="carImg" src="<?php echo '../../' . $item['car_img1'] ?>" alt="avatar" onClick="triggerClick1<?php echo $item['id']; ?>()" id="carDisplay1<?php echo $item['id']; ?>">
+                                                                                                                <img class="carImg" src="<?php echo '../../img/car/' . $item['car_img1'] ?>" alt="avatar" onClick="triggerClick1<?php echo $item['id']; ?>()" id="carDisplay1<?php echo $item['id']; ?>">
                                                                                                             <?php endif; ?>
                                                                                                         </div>
                                                                                                     </div>
@@ -317,7 +317,7 @@ if (is_submit('edit_car')) {
                                                                                                             ?>
                                                                                                                 <img class="carImg" src="../../img/car/default.png" onClick="triggerClick2<?php echo $item['id']; ?>()" id="carDisplay2<?php echo $item['id']; ?>">
                                                                                                             <?php else : ?>
-                                                                                                                <img class="carImg" src="<?php echo '../../' . $item['car_img2'] ?>" alt="avatar" onClick="triggerClick2<?php echo $item['id']; ?>()" id="carDisplay2<?php echo $item['id']; ?>">
+                                                                                                                <img class="carImg" src="<?php echo '../../img/car/' . $item['car_img2'] ?>" alt="avatar" onClick="triggerClick2<?php echo $item['id']; ?>()" id="carDisplay2<?php echo $item['id']; ?>">
                                                                                                             <?php endif; ?>
                                                                                                         </div>
                                                                                                     </div>
@@ -339,7 +339,7 @@ if (is_submit('edit_car')) {
                                                                                                             ?>
                                                                                                                 <img class="carImg" src="../../img/car/default.png" onClick="triggerClick3<?php echo $item['id']; ?>()" id="carDisplay3<?php echo $item['id']; ?>">
                                                                                                             <?php else : ?>
-                                                                                                                <img class="carImg" src="<?php echo '../../' . $item['car_img3'] ?>" alt="avatar" onClick="triggerClick3<?php echo $item['id']; ?>()" id="carDisplay3<?php echo $item['id']; ?>">
+                                                                                                                <img class="carImg" src="<?php echo '../../img/car/' . $item['car_img3'] ?>" alt="avatar" onClick="triggerClick3<?php echo $item['id']; ?>()" id="carDisplay3<?php echo $item['id']; ?>">
                                                                                                             <?php endif; ?>
                                                                                                         </div>
                                                                                                     </div>

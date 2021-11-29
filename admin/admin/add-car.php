@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
     VALUES ('$name','$brand','$year','$seats','$color','$trasmission','$engine','$price','$warranty','$description','$carImageName1','$carImageName2','$carImageName3')";;
     }
     db_execute($sql);
-    redirect(base_url('admin/add-subadmins.php'));
+    redirect(base_url('admin/add-car.php'));
 }
 
 
@@ -178,7 +178,7 @@ if (isset($_POST['submit'])) {
                                                                             <h4>Update image</h4>
                                                                         </div>
 
-                                                                        <img class="carImg" src="carImg/default.png" onClick="triggerClick1add()" id="carDisplay1add">
+                                                                        <img class="carImg" src="../../img/car/default.png" onClick="triggerClick1add()" id="carDisplay1add">
 
                                                                     </div>
                                                                 </div>
@@ -194,7 +194,7 @@ if (isset($_POST['submit'])) {
                                                                             <h4>Update image</h4>
                                                                         </div>
 
-                                                                        <img class="carImg" src="carImg/default.png" onClick="triggerClick2add()" id="carDisplay2add">
+                                                                        <img class="carImg" src="../../img/car/default.png" onClick="triggerClick2add()" id="carDisplay2add">
 
                                                                     </div>
                                                                 </div>
@@ -210,7 +210,7 @@ if (isset($_POST['submit'])) {
                                                                             <h4>Update image</h4>
                                                                         </div>
 
-                                                                        <img class="carImg" src="carImg/default.png" onClick="triggerClick3add()" id="carDisplay3add">
+                                                                        <img class="carImg" src="../../img/car/default.png" onClick="triggerClick3add()" id="carDisplay3add">
 
                                                                     </div>
                                                                 </div>

@@ -1,10 +1,8 @@
 <?php
 session_start();
 include('includes/config.php');
-error_reporting(0);
-if (strlen($_SESSION['login']) == 0) {
-    header('location:index.php');
-} else {
+$msg="";
+$delmsg="";
     if ($_GET['action'] == 'del' && $_GET['rid']) {
         $id = intval($_GET['rid']);
         $query = mysqli_query($con, "update tblcategory set Is_Active='0' where id='$id'");
@@ -279,4 +277,3 @@ if (strlen($_SESSION['login']) == 0) {
     </body>
 
     </html>
-<?php } ?>

@@ -1,12 +1,8 @@
 <?php
 session_start();
 include('includes/config.php');
-error_reporting(0);
-if(strlen($_SESSION['login'])==0)
-  { 
-header('location:index.php');
-}
-else{
+$msg="";
+$delmsg="";
 if( $_GET['disid'])
 {
 	$id=intval($_GET['disid']);
@@ -257,4 +253,3 @@ $cnt++;
 
     </body>
 </html>
-<?php } ?>
