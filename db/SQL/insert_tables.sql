@@ -80,6 +80,6 @@ INSERT INTO `tblposts` (`id`, `PostTitle`, `CategoryId`, `SubCategoryId`, `PostD
 '2db7e093225fc467a342218986299b73.png', NULL, 'admin', NULL)
 ;
 
-INSERT INTO `tblcomments` (`id`, `postId`, `name`, `email`, `comment`, `postingDate`, `status`) VALUES
-(1, 17, 'Ronaldo', 'example@gmail.com', 'Good news', '2021-11-26 06:45:19', 1),
-(2, 16, 'Messi', 'messi@gmail.com', 'Hot news!', '2021-11-26 07:03:13', 1);
+INSERT INTO `tblcomments` (`id`, `postId`, `name`, `email`, `comment`, `postingDate`) VALUES
+(1, 17, 'Ronaldo', 'example@gmail.com', 'Good news', '2021-11-26 06:45:19'),
+(2, 16, 'Messi', 'messi@gmail.com', 'Hot news!', '2021-11-26 07:03:13');

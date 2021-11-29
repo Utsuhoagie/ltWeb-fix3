@@ -109,7 +109,6 @@ CREATE TABLE `tblcomments` (
     `comment` mediumtext DEFAULT NULL,
     `postingDate` timestamp NULL DEFAULT current_timestamp(),
     `img_path` varchar(255) NOT NULL,
-    `status` int(11) NOT NULL,
     PRIMARY KEY (`id`)
 );
 
