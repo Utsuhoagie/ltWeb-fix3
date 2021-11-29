@@ -1,26 +1,42 @@
 <?php 
-  session_start();
   include('includes/config.php');
 
-  // Genrating CSRF Token
-  if (empty($_SESSION['token'])) {
-    $_SESSION['token'] = bin2hex(random_bytes(32));
-  }
+  if(isset($_SESSION['id'])) {
+    $sql = "SELECT * FROM user WHERE id='{$_SESSION["id"]}'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
 
-  if(isset($_POST['submit'])) {
+    $name = $row['name'];
+    $email = $row['email'];
+    $img_path = $row['img_path'];
+  }
+ 
+  if(isset($_POST['submit']) && isset($_SESSION['id'])) {
     // Verifying CSRF Token
-    if (!empty($_POST['csrftoken'])) {
-      if (hash_equals($_SESSION['token'], $_POST['csrftoken'])) {
+    if(!empty($_POST['csrftoken'])) {
+      if(hash_equals($_SESSION['token'], $_POST['csrftoken'])) {
         $comment=$_POST['comment'];
         $postid=intval($_GET['nid']);
-        $st1='0';
-        $query=mysqli_query($con,"insert into tblcomments(postId,name,email,comment,status) values('$postid','$name','$email','$comment','$st1')");
+        $query=mysqli_query($con,"insert into tblcomments(postId,name,email,comment,img_path) values('$postid','$name','$email','$comment','$img_path')");
         if($query):
-          echo "<script>alert('Comment successfully submit');</script>";
           unset($_SESSION['token']);
-        else :
-        echo "<script>alert('Something went wrong. Please try again.');</script>";  
         endif;
+      }
+    }    
+  }
+  else if(isset($_POST['submit']) && !isset($_SESSION['id'])) {
+    echo "<script>alert('You are not the user. Please login');</script>"; 
+  }
+
+  if(isset($_SESSION['id'])) {
+    $sql1 = "SELECT img_path FROM tblcomments WHERE email = '$email'";
+    $result1 = $con->query($sql1);
+
+    if ($result1->num_rows > 0) {
+      while($row = $result1->fetch_assoc()) {
+        $img_path1 = $img_path;
+        $sql1 = "UPDATE tblcomments SET img_path = $img_path1 WHERE email='$email'";
+        $con->query($sql1);
       }
     }
   }
