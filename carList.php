@@ -76,7 +76,7 @@ $next = $page + 1;
           echo'
           <div class="col-md-3 col-xs-6">
             <div class="card h-100 shadow-sm">
-              <img src="'.$cars["car_img1"].'" class="card-img-top" alt="...">
+              <img src=" img/car/'.$cars["car_img1"].'" class="card-img-top" alt="...">
               <div class="card-body">
                 <div class="car-name">' . $cars["name"] . '</div>
                 <div class="car-price">' . number_format($cars["price"], 0, '', ',') . ' $</div>

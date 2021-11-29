@@ -245,7 +245,9 @@
         #up:after {
             background-color: rgb(96, 181, 202);
         }
-
+        .h22{
+            color:white;
+        }
         /*-------------------------------------------------- */
 
         @keyframes slide {
@@ -488,42 +490,33 @@
             <h4>.....................</h4>
         </div>
         <div class="row slideanim">
-            <div class="col-sm-4 col-xs-12">
+            <div class="col-sm-3 col-xs-12">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
-                        <h1>Basic</h1>
+                        <h2 class="h22">Vũ Hoàng Hùng</h2>
                     </div>
-                    <div class="panel-body">
 
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h2 class="h22">Nguyễn Thiên Đăng</h2>
                     </div>
-                    <div class="panel-footer">
 
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h2 class="h22">Nguyễn Hoàng Nhật</h2>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 col-xs-12">
+            <div class="col-sm-3 col-xs-12">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
-                        <h1>Basic</h1>
-                    </div>
-                    <div class="panel-body">
-
-                    </div>
-                    <div class="panel-footer">
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <h1>Basic</h1>
-                    </div>
-                    <div class="panel-body">
-
-                    </div>
-                    <div class="panel-footer">
-
+                        <h2 class="h22">Huỳnh Hữu Hạnh</h2>
                     </div>
                 </div>
             </div>
