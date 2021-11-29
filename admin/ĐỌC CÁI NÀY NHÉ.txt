@@ -1,0 +1,1 @@
+Chỉnh lại url trong libs/helper.php hàm base_url là đc

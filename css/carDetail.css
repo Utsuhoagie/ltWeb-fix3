@@ -1,0 +1,34 @@
+/* Main page */
+
+@media (min-width: 576px) {
+    .carPage { width: 96%; }
+}
+@media (min-width: 768px) {
+    .carPage { width: 88%; }
+}
+
+table * { text-align: center; }
+
+
+/* Reviews */
+
+.rvUserPhoto {
+    height: 6em;
+    width: auto;
+    text-align: center;
+}
+
+.rvUserName {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.detailsReview {
+    margin-top: 1.25em;
+    font-size: 0.8em;
+    color: gray;
+}
+
+.carousel-inner {
+    height: 100% !important;
+}
