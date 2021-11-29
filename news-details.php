@@ -1,5 +1,11 @@
 <?php 
+  session_start();
   include('php_be/show_detail.php');
+
+  // Genrating CSRF Token
+  if(empty($_SESSION['token'])) {
+    $_SESSION['token'] = bin2hex(random_bytes(32));
+  }
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +41,7 @@
   <body>
 
     <!-- Navigation -->
-   <?php //include('includes/header.php');
+   <?php
     include "includes/navbar.php";
    ?>
 
@@ -96,41 +102,48 @@
       <!-- /.row -->
 
       
-<!---Comment Section --->
-
- <div class="row" style="margin-top: -8%">
+  <!---Comment Display Section --->
+  <div class="row" style="margin-top: -8%">
    <div class="col-md-8">
-<div class="card my-4">
-            <h5 class="card-header">Leave a Comment:</h5>
-            <div class="card-body">
-              <form name="Comment" method="post">
-      <input type="hidden" name="csrftoken" value="<?php echo htmlentities($_SESSION['token']);?>"/>
-                <div class="form-group">
-                  <textarea class="form-control" name="comment" rows="3" placeholder="Comment" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-              </form>
+      <div class="card my-4">
+        <h5 class="card-header">Leave a Comment:</h5>
+        <div class="card-body">
+          <form name="Comment" method="post">
+            <input type="hidden" name="csrftoken" value=<?php echo $_SESSION['token'] ?>>
+            <div class="form-group">
+              <textarea class="form-control" name="comment" rows="3" placeholder="Comment" required></textarea>
             </div>
-          </div>
+            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+          </form>
+        </div>
+      </div>
 
   <!---Comment Display Section --->
 
- <?php 
- $sts=1;
- $query=mysqli_query($con,"select name,comment,postingDate from  tblcomments where postId='$pid' and status='$sts'");
-while ($row=mysqli_fetch_array($query)) {
-?>
-<div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="img/user/default_avatar.png" alt="<?php echo htmlentities ($row['name']);?>" width=10%>
-            <div class="media-body">
-              <h5 class="mt-0"><?php echo htmlentities($row['name']);?> <br />
-                  <span style="font-size:11px;"><b>at</b> <?php echo htmlentities($row['postingDate']);?></span>
+    <?php 
+      $query=mysqli_query($con,"select name, email, comment, postingDate, img_path from  tblcomments where postId='$pid'");
+      while ($row=mysqli_fetch_array($query)) {
+      ?>
+        <div class="media mb-4">
+          <?php if (empty($row['img_path'])) :
+          ?> 
+            <img class="d-flex mr-3 rounded-circle" src="img/user/default_avatar.png" alt="<?php echo htmlentities($row['name']);?>" width=30px>
+          <?php else : ?>
+            <img class="d-flex mr-3 rounded-circle" src="<?php echo $row['img_path'] ?>" alt="<?php echo htmlentities($row['name']);?>" width=30px>
+          <?php endif; ?>  
+          <div class="media-body">
+            <h5 class="mt-0">
+              <?php echo htmlentities($row['name']);?> </br>
+              <span style="font-size:11px;"> 
+                <b>at</b> <?php echo htmlentities($row['postingDate']);?>
+              </span>
             </h5>
-           
-             <?php echo htmlentities($row['comment']);?>            </div>
+          <?php echo htmlentities($row['comment']);?>            
           </div>
-<?php } ?>
-
+        </div>
+      <?php 
+      } 
+    ?>
         </div>
       </div>
     </div>
