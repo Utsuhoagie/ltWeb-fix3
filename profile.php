@@ -72,7 +72,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="userCart.php">
                             <i class="fas fa-box"></i>Order</a>
                         </li>
                         <li class="has-sub">
@@ -80,12 +80,12 @@
                             <i class="fas fa-bell"></i>Notification</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="login.html">Order Update</a>
+                                    <a href="#">Order Update</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="landing_page.html">
+                            <a href="landingPage.php">
                             <i class="fas fa-home"></i>Homepage</a>
                         </li>
                     </ul>
