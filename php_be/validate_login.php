@@ -30,8 +30,15 @@
         $result = mysqli_query($conn, "SELECT * FROM user WHERE email = '" . $email. "' and password = '" .$hash_password. "'");
         if ($row = mysqli_fetch_array($result)) {
             $_SESSION['id'] = $row['id'];
-            $_SESSION['user_name'] = $row['name'];		
-            header("Location: profile.php");
+            $_SESSION['user_name'] = $row['name'];	
+            
+            if($row['is_admin'] == 1)	{
+                header("Location: admin/admin.php");
+                $_SESSION['is_admin'] = $row['is_admin'];
+            }
+            else {
+                header("Location: index.php");
+            }	
         } else {
             $error_message = "Incorrect Email or Password!!!";
         }
