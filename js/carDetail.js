@@ -34,6 +34,8 @@ $("#addCartForm>button").click(function(e) {
             
             // Send AJAX request to server, update Order's `quantity`
             $.post(url, data_update);
+
+            alert("Added to cart!");
         }
     );
 });

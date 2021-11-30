@@ -49,7 +49,12 @@
      data-review-id="<?php echo $review_id ?>"
      data-user-id="<?php echo $user_id ?>">
     <a href="#">
-        <img src="<?php echo $userPfpPath ?>"
+        <img src="<?php 
+                if ($userPfpPath)
+                    echo $userPfpPath;
+                else
+                    echo "img/user/default_avatar.png";
+                    ?>"
              class="rvUserPhoto pt-2 pb-3" 
              alt="<?php echo $userName ?>">
     </a>

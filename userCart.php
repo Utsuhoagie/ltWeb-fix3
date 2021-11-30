@@ -2,7 +2,7 @@
     session_start();
 
     if (!isset($_SESSION["id"]))
-        header("Location: /lapTrinhWeb/register+login+user_profile/register.php");
+        header("Location: login.php");
 
     $sess_user_id = $_SESSION["id"];
 
@@ -117,7 +117,7 @@
                         data-car-id ="<?php echo $car_id ?>">
                         <td>
                             <a href="carDetail.php?car_id=<?php echo $car_id ?>">
-                                <img src="<?php echo $car_img1 ?>" class="carImg col-sm-12 col-md-11 p-0" 
+                                <img src="img/car/<?php echo $car_img1 ?>" class="carImg col-sm-12 col-md-11 p-0" 
                                     alt="<?php echo $name ?>">
                             </a>
                             <br>

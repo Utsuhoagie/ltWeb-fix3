@@ -131,7 +131,7 @@ CREATE TABLE `CarReview` (
     `car_id` int(11) UNSIGNED NOT NULL,
     `review` varchar(256) NOT NULL,
     `rating` int(2) UNSIGNED,
-    `date_posted` datetime,
+    `date_posted` datetime NOT NULL DEFAULT current_timestamp(),
     FOREIGN KEY (`user_id`) REFERENCES `User`(`id`),
     FOREIGN KEY (`car_id`) REFERENCES `Car`(`id`),
     PRIMARY KEY (`review_id`)
